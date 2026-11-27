@@ -47,19 +47,16 @@ Then start the MCP Inspector in another terminal and connect to `http://localhos
 npx @modelcontextprotocol/inspector
 ```
 
-## Connecting Clients After Deploy
+## Connecting Clients
 
 ### Claude (`claude.ai` or Claude Desktop)
 
-1. Deploy with `npm run deploy` and copy the `https://learn-mcp-step-01.<your-subdomain>.workers.dev/mcp` URL.
-2. Open **Settings → Connectors** (or **Customize → Connectors**) and click **+ Add custom connector**.
-3. Enter name `Stockroom Hello World` and paste your `/mcp` URL (leave auth none for Step 01).
-4. Enable the connector in a new chat and test with:
-   > `Use the Stockroom Hello World connector to call greet with name "Tayyab", then call get_time for "Asia/Karachi".`
-5. Save the screenshot as `step-01-hello-world/claude.png`.
+1. Open **Settings → Connectors** and click **+ Add custom connector**.
+2. Name: `Stockroom Hello World`, URL: `https://learn-mcp-step-01.moh-tayyab.workers.dev/mcp`, Authentication: **No sign-in**.
+3. Enable the connector in a new chat, test `greet` and `get_time`, and save the screenshot as `step-01-hello-world/claude.png`.
 
 ### ChatGPT
 
-1. If your ChatGPT plan/workspace supports custom MCP servers (Plugins / Developer Mode), open **Plugins → + → Add custom MCP server**, enter your `/mcp` URL with **No authentication**, and install it.
-2. Mention the plugin with `@` in a chat using the same prompt and save `step-01-hello-world/chatgpt.png`.
-3. *Account note:* On ChatGPT Free accounts where adding custom remote MCP server URLs is unavailable, document the plan limitation here after verifying with MCP Inspector and `claude.png`.
+1. Open **Plugins → + → Add custom MCP server**.
+2. Name: `Stockroom Hello World`, Connection URL: `https://learn-mcp-step-01.moh-tayyab.workers.dev/mcp`, Authentication: **No authentication** (Step 01 does not expose OAuth discovery yet; OAuth is added in Step 04).
+3. Check **I understand and want to continue**, create and install the plugin, test with `@Stockroom Hello World`, and save the screenshot as `step-01-hello-world/chatgpt.png`.
