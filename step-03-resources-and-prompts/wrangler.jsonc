@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "learn-mcp-step-03",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-27",
+  "workers_dev": true,
+  "kv_namespaces": [
+    {
+      // Dedicated Step 03 KV namespace ("NOTES_STEP_03") keeps Step 02 test data isolated
+      // while both Workers stay deployed for grading.
+      "binding": "NOTES",
+      "id": "270dfb54a7374a6e99b430e72cc98077"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    }
+  }
+}
