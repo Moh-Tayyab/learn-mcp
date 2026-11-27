@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "learn-mcp-step-02",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-27",
+  "workers_dev": true,
+  "kv_namespaces": [
+    {
+      // Notes store: shared across all Worker copies (eventually consistent, up to ~60s lag).
+      // Perfect for a notes demo; business data moves to Neon in step 5.
+      "binding": "NOTES",
+      "id": "76dc3a0460524a9da34b6f5180c5767a"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    }
+  }
+}

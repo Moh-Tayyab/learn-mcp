@@ -1,0 +1,2 @@
+# Step 01 does not require secrets yet.
+# Copy to .dev.vars if you add local development variables later (never commit .dev.vars).
